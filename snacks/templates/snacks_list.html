@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block snack %}Snacks List{% endblock snack %}
+
+{% block content %}
+<div class="container mx-auto">
+  <h1 class="text-3xl font-bold mb-6">Snacks List</h1>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    {% for snack in snacks %}
+    <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
+      <h2 class="text-xl font-semibold mb-2"><a href="{% url 'snacks_detail' snack.id %}">{{ snack.name }}</a></h2>
+      <!-- Additional snack details can be displayed here -->
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

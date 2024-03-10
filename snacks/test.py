@@ -1,34 +1,12 @@
-## snacks_crud Repo
+from django.contrib.auth import get_user_model
+from django.test import TestCase
+from django.urls import reverse
 
-### LAB - Class 28 Project: snacks_crud
+from .models import Snack
 
-### Author: Myyela Isaac
 
-### Links and Resources - N/A
-
-### Setup - N/A
-
-### PORT - N/A
-
-### DATABASE_URL - N/A
-
-### How to initialize/run your application - 
-
-- `python manage.py runserver`
-
-### How to use your library
-
-`pip install -r requirements.txt`,
-`npm install`
-
-### Tests How do you run tests?
-
-`python manage.py test`
-
-### Tested-
-
-```    
-def setUp(self):
+class SnackTests(TestCase):
+    def setUp(self):
         self.user = get_user_model().objects.create_user(
             username="tester", email="tester@email.com", password="pass"
         )
@@ -97,8 +75,3 @@ def setUp(self):
     def test_model(self):
         thing = Snack.objects.create(name="rake", reviewer=self.user)
         self.assertEqual(thing.name, "rake")
-```
-
-### Any tests of note? - N/A
-
-### Describe any tests that you did not complete, skipped, etc - N/A
